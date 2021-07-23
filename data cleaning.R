@@ -313,6 +313,14 @@ data$officer_response <- recode(data$officer_response, "Uniform Patrol - Empty\r
 data$officer_response <- recode(data$officer_response, "Uniform Patrol - Empty\r\n Hands Hard"="Uniform Patrol - Empty Hands Hard")
 data$officer_response <- recode(data$officer_response, "Uniform Patrol - Empty\r\n hand soft"="Uniform Patrol - Empty Hands Soft")
 
+#clean location
+table(data$location)
+data$location <- recode(data$location, "Other\r\n Jurisdiction"="Outside jurisdiction")
+data$location <- recode(data$location, "Out of\r\n jurisdiction"="Outside jurisdiction")
+data$location <- recode(data$location, "Outside\r\n jurisdiction"="Outside jurisdiction")
+data$location <- recode(data$location, "Out of Jurisdiction"="Outside jurisdiction")
+
+
 
 #wide data exclude animals
 
